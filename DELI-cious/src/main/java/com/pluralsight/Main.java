@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import models.Order;
+
 import java.util.Scanner;
 
 public class Main {
@@ -16,8 +18,12 @@ public class Main {
 
             switch(input) {
                 case 1:
+                    Order order = new Order();
+                    OrderScreen orderScreen = new OrderScreen(order, scanner);
+                    orderScreen.show();
                     break;
                 case 0:
+                    running = false;
                     break;
                 default:
                     System.out.println("Invalid option.");
