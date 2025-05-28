@@ -1,6 +1,6 @@
-package com.pluralsight;
+package manager;
 
-import models.Order;
+import models.*;
 
 import java.util.Scanner;
 
@@ -30,22 +30,37 @@ public class OrderScreen {
 
             switch (input) {
                 case 1:
-                    order.addSandwich("Sample sandwich");
-                    System.out.println("Added sandwich.");
+                    Sandwich sandwich = new AddSandwichScreen(scanner).createSandwich();
+                    order.addItem(sandwich);
+                    System.out.println("Added sandwich");
                     break;
 
                 case 2:
-                    order.addDrink("Sample Drink");
+                    Drink drink = new AddDrinkScreen(scanner).createDrink();
+                    order.addItem(drink);
                     System.out.println("Added drink");
                     break;
 
                 case 3:
-                    order.addChips("Sample chips");
+                    Chips chips = new AddChipsScreen(scanner).createChips();
+                    order.addItem(chips);
                     System.out.println("Added chips");
                     break;
 
                 case 4:
                     System.out.println("Checkout selected.");
+                    for (OrderItem item : order.getItems()) {
+                        System.out.println(item.getDescription() + "- $" +
+                                String.format("%.2f", item.getPrice()));
+                    }
+                    System.out.println("Total: $" + String.format("%.2f", order.getTotalPrice()));
+                    System.out.println("Confirm order? (yes/no): ");
+                    String confirm = scanner.nextLine();
+                    if (confirm.equalsIgnoreCase("yes")){
+                        System.out.println("order confirmed");
+                    } else {
+                        System.out.println("order canceled");
+                    }
                     ordering = false;
                     break;
 
