@@ -24,7 +24,7 @@ public class Sandwich extends Product{
     }
 
     private double calculatePrice() {
-        double breadprice = switch (size) {
+        double breadPrice = switch (size) {
             case "4\"" -> 5.50;
             case "8\"" ->7.00;
             case "12\"" ->8.50;
@@ -44,7 +44,7 @@ public class Sandwich extends Product{
             case "12\"" -> 2.25;
             default -> 0.0;
         };
-        return  breadprice + meatPrice + cheesePrice;
+        return  breadPrice + meatPrice + cheesePrice;
     }
 
     @Override
