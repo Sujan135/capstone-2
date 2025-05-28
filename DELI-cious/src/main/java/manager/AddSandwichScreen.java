@@ -65,7 +65,7 @@ public class AddSandwichScreen {
         boolean toasted = input.equalsIgnoreCase("yes");
 
 
-        return null;
+        return new Sandwich(bread,size,meats,cheeses,toppings,sauces,toasted);
     }
 
 }
