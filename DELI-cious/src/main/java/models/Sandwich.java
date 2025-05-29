@@ -6,7 +6,7 @@ import java.util.Map;
 public class Sandwich {
     private SandwichSize size;
     private BreadType bread;
-    private Map<Topping, Integer> toppings;
+    private HashMap<Topping, Integer> toppings;
     private boolean isToasted;
 
     public Sandwich(SandwichSize size, BreadType bread) {
@@ -26,7 +26,7 @@ public class Sandwich {
 
     public double calculatePrice() {
         double price = size.getBreadPrice();
-        for (Map.Entry<Topping, Integer> entry : toppings.entrySet()) {
+        for (HashMap.Entry<Topping, Integer> entry : toppings.entrySet()) {
             Topping topping = entry.getKey();
             int quantity = entry.getValue();
             price += topping.getPrice(size);
