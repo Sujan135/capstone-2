@@ -1,0 +1,16 @@
+Order ID: 2025-05-29T12:44:43.997388300
+Order Time: 2025-05-29T12:44:43.997388300
+
+Sandwiches:
+EIGHT_INCH RYE sandwich (toasted)
+Toppings:
+- Lettuce (x3)
+- Steak (x1)
+- Mayo (x1)
+- Cheddar (x2)
+
+Drinks:
+- coke (Medium)
+Chips:
+- regular
+Total: $15.10

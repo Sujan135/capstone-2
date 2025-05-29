@@ -1,0 +1,12 @@
+Order Receipt - 20250528-224205
+--------------------------------
+Large chips - $1.50
+Large coke Drink - $3.00
+Sandwich (12, wheat) 
+Meats: [chicken]
+Cheeses: [cheddar]
+Toppings: [onions]
+Sauces: [mayo]
+Toasted: Yes - $13.75
+------------------------
+Total: $18.25

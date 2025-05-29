@@ -1,0 +1,14 @@
+Order Time: 2025-05-29T14:26:01.378190300
+
+Sandwiches:
+FOUR_INCH WHITE sandwich (toasted)
+Toppings:
+- Lettuce (x1)
+- Steak (x1)
+- Mayo (x10)
+- Thousand Islands (x1)
+- American (x1)
+
+Drinks:
+Chips:
+Total: $7.25

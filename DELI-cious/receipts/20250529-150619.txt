@@ -1,0 +1,13 @@
+Order Time: 2025-05-29T15:06:19.653159
+
+Sandwiches:
+FOUR_INCH WHITE sandwich (toasted)
+Toppings:
+- Mayo (x1)
+- Provolone (x1)
+- Steak (x3)
+- Onions (x3)
+
+Drinks:
+Chips:
+Total: $8.25

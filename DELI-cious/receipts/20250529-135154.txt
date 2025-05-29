@@ -1,0 +1,15 @@
+Order Time: 2025-05-29T13:51:54.862080700
+
+Sandwiches:
+FOUR_INCH WHEAT sandwich (toasted)
+Toppings:
+- Tomatoes (x1)
+- Salami (x1)
+- Ranch (x1)
+- Provolone (x1)
+
+Drinks:
+- coke (Medium)
+Chips:
+- regular
+Total: $11.25

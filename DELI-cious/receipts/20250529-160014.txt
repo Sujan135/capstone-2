@@ -1,0 +1,15 @@
+Order Time: 2025-05-29T16:00:14.354618500
+
+Sandwiches:
+FOUR_INCH WHITE sandwich
+Toppings:
+- Lettuce (x1)
+- Steak (x2)
+- Ketchup (x1)
+- American (x1)
+
+Drinks:
+- coke (Large)
+Chips:
+- regular
+Total: $12.75
