@@ -23,11 +23,13 @@ public class ApplicationManager {
             int choice = scanner.nextInt();
             scanner.nextLine();
 
-            if (choice == 0) {
+            if (choice == 1) {
+                handleNewOrder();
+            } else if (choice == 0) {
                 System.out.println("Exiting...");
                 break;
-            } else if (choice == 1) {
-                handleNewOrder();
+            } else {
+                System.out.println("Invalid Input.");
             }
         }
     }

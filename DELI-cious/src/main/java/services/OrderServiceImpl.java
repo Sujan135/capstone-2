@@ -3,6 +3,7 @@ package services;
 import models.*;
 
 import java.util.Arrays;
+import utils.InputUtils;
 import java.util.Scanner;
 
 public class OrderServiceImpl implements OrderService {
@@ -94,46 +95,79 @@ public class OrderServiceImpl implements OrderService {
     }
 
     private void selectToppingsByType(String label, Topping[] options, Sandwich sandwich) {
-        System.out.println("Add " + label + " (choose all that apply");
+        System.out.println("Add " + label);
         for (int i = 0; i < options.length; i++) {
             System.out.printf("%d) %s%n", i + 1, options[i].getName());
         }
-        int choice;
-        while (true) {
+
+        boolean select = label.equalsIgnoreCase("toppings") || label.equalsIgnoreCase("sauces");
+
+        if (select) {
+            System.out.println("Enter topping numbers");
             System.out.print("> ");
-            choice = scanner.nextInt();
+            String[] inputs = scanner.nextLine().trim().split("\\s+");
+
+            for (String input : inputs) {
+                int choice;
+                try {
+                    choice = Integer.parseInt(input);
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid input: " + input);
+                    continue;
+                }
+
+                if (choice == 0) return;
+                if (choice < 1 || choice > options.length) {
+                    System.out.println("Invalid topping number: " + choice);
+                    continue;
+                }
+
+                Topping topping = options[choice - 1];
+                String extraInput = InputUtils.getYesOrNo("Add extra " + topping.getName() + "?");
+
+                int quantity = 1;
+                if (extraInput.equals("y")) {
+                    System.out.print("How many extra servings?\n> ");
+                    try {
+                        int extraServings = Integer.parseInt(scanner.nextLine().trim());
+                        quantity += extraServings;
+                    } catch (NumberFormatException e) {
+                        System.out.println("Invalid number. Using default of 1.");
+                    }
+                }
+
+                sandwich.addTopping(topping, quantity);
+            }
+        } else {
+            System.out.print("> ");
+            int choice = scanner.nextInt();
             scanner.nextLine();
-            if (choice == 0) break;
+
+            if (choice == 0) return;
             if (choice < 1 || choice > options.length) {
                 System.out.println("Invalid choice.");
-                continue;
+                return;
             }
+
             Topping topping = options[choice - 1];
-            System.out.printf("Add extra %s? (y/n)%n> ", topping.getName());
-            String extraInput = scanner.nextLine().trim();
-//            boolean extra = scanner.nextLine().equalsIgnoreCase("y");
+            String extraInput = InputUtils.getYesOrNo("Add extra " + topping.getName() + "?");
+
             int quantity = 1;
-            if (extraInput.equalsIgnoreCase("y")) {
+            if (extraInput.equals("y")) {
                 System.out.print("How many extra servings?\n> ");
-                int extraServings = scanner.nextInt();
-                scanner.nextLine();
-                quantity += extraServings;
-                sandwich.addTopping(topping, quantity);
-                // Keep asking for more toppings
-            } else if (extraInput.equalsIgnoreCase("n")) {
-                sandwich.addTopping(topping, quantity);
-                // Instead of asking for 0, just break and move to next category immediately
-                break;
-            } else {
-                System.out.println("Invalid input, please enter 'y' or 'n'.");
-                // Do not add topping; retry this topping
-                continue;
+                try {
+                    int extraServings = Integer.parseInt(scanner.nextLine().trim());
+                    quantity += extraServings;
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid number. Using default of 1.");
+                }
             }
+
             sandwich.addTopping(topping, quantity);
         }
-
-
     }
+
+
 
 
     @Override

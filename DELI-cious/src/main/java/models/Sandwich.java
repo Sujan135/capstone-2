@@ -19,6 +19,14 @@ public class Sandwich {
     public void addTopping(Topping topping, int quantity) {
         toppings.merge(topping, quantity, Integer::sum);
     }
+    public void addToppings(Map<Topping, Integer> toppingsToAdd) {
+        for (Map.Entry<Topping, Integer> entry : toppingsToAdd.entrySet()) {
+            toppings.merge(entry.getKey(), entry.getValue(), Integer::sum);
+        }
+    }
+
+
+
 
     public void setToasted(boolean toasted) {
         isToasted = toasted;
@@ -29,10 +37,7 @@ public class Sandwich {
         for (HashMap.Entry<Topping, Integer> entry : toppings.entrySet()) {
             Topping topping = entry.getKey();
             int quantity = entry.getValue();
-            price += topping.getPrice(size);
-            if (quantity > 1) {
-                price += (quantity - 1) * topping.getExtraPrice(size);
-            }
+            price += topping.getPrice(size) * quantity;
         }
         return price;
     }
@@ -42,7 +47,7 @@ public class Sandwich {
         details.append(size).append(" ").append(bread).append(" sandwich");
         if (isToasted) details.append(" (toasted)");
         details.append("\nToppings:\n");
-        for (Map.Entry<Topping, Integer> entry : toppings.entrySet()) {
+        for (HashMap.Entry<Topping, Integer> entry : toppings.entrySet()) {
             details.append("- ").append(entry.getKey().getName()).append(" (x").append(entry.getValue()).append(")\n");
         }
         return details.toString();

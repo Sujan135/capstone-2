@@ -47,7 +47,7 @@ public class Order {
 
     public String getDetails() {
         StringBuilder details = new StringBuilder();
-        details.append("Order ID: ").append(orderId).append("\nOrder Time: ").append(orderTime).append("\n\n");
+        details.append("Order Time: ").append(orderTime).append("\n\n");
         details.append("Sandwiches:\n");
         for (Sandwich sandwich : sandwiches) {
             details.append(sandwich.getDetails()).append("\n");
