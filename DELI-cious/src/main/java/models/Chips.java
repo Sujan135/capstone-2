@@ -1,16 +1,19 @@
 package models;
 
-public class Chips extends Product{
+public class Chips{
     private String type;
+    private double price;
 
-    public Chips(String type) {
+    public Chips(String type, double price) {
         this.type = type;
-        this.name = type + " chips";
-        this.price = 1.50;
+        this.price = price;
     }
 
-    @Override
-    public String getDescription() {
-        return name;
+    public String getType() {
+        return type;
+    }
+
+    public double getPrice() {
+        return price;
     }
 }
