@@ -26,6 +26,9 @@ Object-Oriented Design with Enums and Classes for Sandwich, Toppings, Drinks, an
 
 Modular package structure for services, models, and utilities.
 
+# One interesting code
+One interesting piece of code is the selectToppingsByType method, which lets users select multiple toppings, ask if they want extra servings, and adds those toppings with quantities to the sandwich—making the order customization flexible and interactive.
+
 
 # HomeScreenTesting
 ![First Testing Image](https://github.com/Sujan135/capstone-2/blob/a55855bbc83bc4108eb04837b25f134f4183f036/HomeScreen_testing.png)
