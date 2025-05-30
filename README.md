@@ -1,7 +1,7 @@
 # DELI-cious Sandwich Shop POS System
 A simple, interactive Point-of-Sale (POS) system for a sandwich shop, built in Java. This console-based application allows users to customize sandwiches, add drinks and chips, and view a detailed receipt including itemized prices.
 
- #Features
+# Features
 Sandwich Customization:
 Select sandwich size (4", 8", 12") with different bread types.
 Add meats, cheeses, regular toppings, and sauces with options for extra servings.
@@ -17,7 +17,7 @@ Clear, detailed receipt printing showing each item, quantity, individual prices,
 
 # User-Friendly Console Interface:
 Menu-driven interaction with input validation.
-Easy navigation through sandwich building and order checkout.
+Easy navigation through the sandwich building and order checkout.
 
 # Technologies Used
 Java
