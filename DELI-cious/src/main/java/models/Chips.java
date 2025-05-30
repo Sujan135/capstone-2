@@ -1,8 +1,8 @@
 package models;
 
 public class Chips{
-    private String type;
-    private double price;
+    private final String type;
+    private final double price;
 
     public Chips(String type, double price) {
         this.type = type;

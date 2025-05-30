@@ -1,12 +1,11 @@
 package models;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class Sandwich {
-    private SandwichSize size;
-    private BreadType bread;
-    private HashMap<Topping, Integer> toppings;
+    private final SandwichSize size;
+    private final BreadType bread;
+    private final HashMap<Topping, Integer> toppings;
     private boolean isToasted;
 
     public Sandwich(SandwichSize size, BreadType bread) {
@@ -16,17 +15,18 @@ public class Sandwich {
         this.isToasted = false;
     }
 
+
+    public HashMap<Topping, Integer> getToppings() {
+        return toppings;
+    }
+
+    public boolean isToasted() {
+        return isToasted;
+    }
+
     public void addTopping(Topping topping, int quantity) {
         toppings.merge(topping, quantity, Integer::sum);
     }
-    public void addToppings(Map<Topping, Integer> toppingsToAdd) {
-        for (Map.Entry<Topping, Integer> entry : toppingsToAdd.entrySet()) {
-            toppings.merge(entry.getKey(), entry.getValue(), Integer::sum);
-        }
-    }
-
-
-
 
     public void setToasted(boolean toasted) {
         isToasted = toasted;

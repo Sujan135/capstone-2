@@ -1,0 +1,18 @@
+Order Time: 2025-05-29T22:42:06.496809300
+
+Sandwiches:
+FOUR_INCH WHITE sandwich (toasted)
+Toppings:
+- American (x3)
+- Vinaigrette (x1)
+- Jalapeños (x1)
+- Onions (x1)
+- Pickles (x1)
+- Lettuce (x1)
+- Mustard (x1)
+- Steak (x2)
+- Mayo (x1)
+
+Drinks:
+Chips:
+Total: $9.75

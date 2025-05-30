@@ -2,12 +2,11 @@ package services;
 
 import models.*;
 
-import java.util.Arrays;
 import utils.InputUtils;
 import java.util.Scanner;
 
 public class OrderServiceImpl implements OrderService {
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     @Override
     public Order createOrder() {
@@ -17,15 +16,15 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void addSandwich(Order order) {
         System.out.println("Select sandwich size:");
-        System.out.println("1) 4\"");
-        System.out.println("2) 8\"");
-        System.out.println("3) 12\"");
+        System.out.printf("1) 4\"  -$%.2f%n", SandwichSize.FOUR_INCH.getBreadPrice()   );
+        System.out.printf("2) 8\"  -$%.2f%n", SandwichSize.EIGHT_INCH.getBreadPrice()  );
+        System.out.printf("3) 12\"  -$%.2f%n", SandwichSize.TWELVE_INCH.getBreadPrice()   );
         System.out.println("-------------------");
         SandwichSize size = switch (scanner.nextInt()) {
             case 1 -> SandwichSize.FOUR_INCH;
             case 2 -> SandwichSize.EIGHT_INCH;
             case 3 -> SandwichSize.TWELVE_INCH;
-            default -> SandwichSize.FOUR_INCH;
+            default -> throw new IllegalArgumentException("Invalid");
         };
         scanner.nextLine();
 
@@ -40,14 +39,17 @@ public class OrderServiceImpl implements OrderService {
             case 2 -> BreadType.WHEAT;
             case 3 -> BreadType.RYE;
             case 4 -> BreadType.WRAP;
-            default -> BreadType.WHITE;
+            default -> throw new IllegalArgumentException("Invalid");
         };
         scanner.nextLine();
 
         Sandwich sandwich = new Sandwich(size, bread);
         addToppings(sandwich);
         System.out.println("Would you like the sandwich toasted? (y/n): ");
+
         sandwich.setToasted(scanner.nextLine().equalsIgnoreCase("y"));
+        System.out.println("Order made: Ready for checkout....");
+
         order.addSandwich(sandwich);
     }
 
@@ -168,16 +170,18 @@ public class OrderServiceImpl implements OrderService {
     }
 
 
-
-
     @Override
     public void addDrink(Order order) {
-        System.out.println("Select drink size (1: Small, 2: Medium, 3: Large): ");
+        System.out.println("Select drink size:");
+        System.out.printf("1) Small  - $2.00%n");
+        System.out.printf("2) Medium - $2.50%n");
+        System.out.printf("3) Large  - $3.00%n");
+        System.out.print("> ");
         String size = switch (scanner.nextInt()) {
             case 1 -> "Small";
             case 2 -> "Medium";
             case 3 -> "Large";
-            default -> "Small";
+            default -> "";
         };
         scanner.nextLine();
         System.out.println("Enter drink flavor: ");

@@ -7,8 +7,8 @@ import services.OrderServiceImpl;
 import java.util.Scanner;
 
 public class ApplicationManager {
-    private OrderService orderService;
-    private Scanner scanner;
+    private final OrderService orderService;
+    private final Scanner scanner;
 
     public ApplicationManager() {
         this.orderService = new OrderServiceImpl();

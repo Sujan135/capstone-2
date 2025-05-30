@@ -3,9 +3,9 @@ package models;
 import java.util.HashMap;
 
 public class Topping {
-    private String name;
-    private ToppingType type;
-    private HashMap<SandwichSize, Double> price;
+    private final String name;
+    private final ToppingType type;
+    private final HashMap<SandwichSize, Double> price;
 
     public Topping(String name, ToppingType type) {
         this.name = name;
@@ -47,13 +47,5 @@ public class Topping {
     return price.getOrDefault(size, 0.00);
     }
 
-    public double getExtraPrice(SandwichSize size) {
-        if (type == ToppingType.MEAT) {
-            return size == SandwichSize.FOUR_INCH ? 0.50 : size == SandwichSize.EIGHT_INCH ? 1.00 : 1.50;
-        } else if (type == ToppingType.CHEESE) {
-            return  size == SandwichSize.FOUR_INCH ? 0.30 : size == SandwichSize.EIGHT_INCH ? 0.60: 0.90;
-        }
-        return 0.00;
-    }
 }
 

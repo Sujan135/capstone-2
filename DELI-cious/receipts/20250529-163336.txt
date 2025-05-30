@@ -1,0 +1,18 @@
+Order Time: 2025-05-29T16:33:36.926193300
+
+Sandwiches:
+TWELVE_INCH WHEAT sandwich (toasted)
+Toppings:
+- Pickles (x1)
+- Ranch (x1)
+- Chicken (x2)
+- Cheddar (x1)
+- Onions (x1)
+- Lettuce (x1)
+- Tomatoes (x1)
+
+Drinks:
+- Coke (Medium)
+Chips:
+- Regular
+Total: $20.75

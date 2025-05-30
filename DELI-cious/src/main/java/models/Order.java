@@ -5,14 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private String orderId;
-    private List<Sandwich> sandwiches;
-    private List<Drink> drinks;
-    private List<Chips> chips;
-    private LocalDateTime orderTime;
+    private final List<Sandwich> sandwiches;
+    private final List<Drink> drinks;
+    private final List<Chips> chips;
+    private final LocalDateTime orderTime;
 
     public Order() {
-        this.orderId = LocalDateTime.now().toString();
         this.sandwiches = new ArrayList<>();
         this.drinks = new ArrayList<>();
         this.chips = new ArrayList<>();

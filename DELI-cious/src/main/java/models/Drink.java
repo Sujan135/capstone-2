@@ -1,9 +1,9 @@
 package models;
 
 public class Drink{
-    private String size;
-    private String flavor;
-    private double price;
+    private final String size;
+    private final String flavor;
+    private final double price;
 
     public Drink(String size, String flavor, double price) {
         this.size = size;
