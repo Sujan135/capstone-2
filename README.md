@@ -1,4 +1,30 @@
-# capstone-2
+# DELI-cious Sandwich Shop POS System
+A simple, interactive Point-of-Sale (POS) system for a sandwich shop, built in Java. This console-based application allows users to customize sandwiches, add drinks and chips, and view a detailed receipt including itemized prices.
+
+ #Features
+Sandwich Customization:
+Select sandwich size (4", 8", 12") with different bread types.
+Add meats, cheeses, regular toppings, and sauces with options for extra servings.
+Option to toast the sandwich.
+
+# Price Calculation:
+Real-time price display for bread, meats, cheeses, drinks, and chips.
+Supports pricing variations by sandwich size and extra toppings.
+
+# Order Management:
+Create and add multiple sandwiches, drinks, and chips to an order.
+Clear, detailed receipt printing showing each item, quantity, individual prices, and total.
+
+# User-Friendly Console Interface:
+Menu-driven interaction with input validation.
+Easy navigation through sandwich building and order checkout.
+
+# Technologies Used
+Java
+
+Object-Oriented Design with Enums and Classes for Sandwich, Toppings, Drinks, and Order.
+
+Modular package structure for services, models, and utilities.
 
 
 # HomeScreenTesting
