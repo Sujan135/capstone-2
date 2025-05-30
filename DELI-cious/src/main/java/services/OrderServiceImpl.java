@@ -88,7 +88,6 @@ public class OrderServiceImpl implements OrderService {
                     new Topping("Vinaigrette", ToppingType.SAUCE),
             };
 
-            // Repeat this pattern for each type
             selectToppingsByType("meat", meats, sandwich);
             selectToppingsByType("cheese", cheeses, sandwich);
             selectToppingsByType("toppings", regulars, sandwich);
